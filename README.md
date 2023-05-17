@@ -48,7 +48,7 @@ Here is a list of things you should know before getting any further.
 
 ### Projects and exercices
 
-- Every project while have the same shape on narrow devices
+- Every project will have the same shape on narrow devices
 - The personal projects shape will change drastically on wide screens
 
 ## 🎈 Usage <a name = "usage"></a>
