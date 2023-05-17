@@ -1,0 +1,26 @@
+.slideMeIn {
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateY(100px);
+    transition: opacity 1000ms linear,
+                filter 750ms 250ms linear,
+                transform 750ms;
+}
+
+.iSlidedIn {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.revealMe {
+    opacity: 0;
+    filter: blur(1px);
+    transition: opacity 1000ms linear,
+                filter 750ms 250ms linear;
+}
+
+.iWasRevealed {
+    opacity: 1;
+    filter: blur(0);
+}

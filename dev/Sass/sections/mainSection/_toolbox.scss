@@ -1,0 +1,84 @@
+section#toolbox {
+    div#toobloxContent {
+        display: flex;
+        flex-flow: column nowrap;
+
+        @media screen and (min-width: 900px) {
+            flex-flow: row nowrap;
+            gap: 25px;
+        }
+
+        div#toolMainText {
+            div#toolContents {
+                p {
+                    margin: 0;
+                }
+
+                ul {
+                    margin: 10px 0;
+
+                    li {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        div#toolSamples {
+            max-width: 500px;
+            border-radius: 5px;
+            margin: 35px auto 0 auto;
+
+            @media screen and (min-width: 900px) {
+                margin: 0;
+                max-width: 300px;
+                height: fit-content;
+                padding: 0 5px;
+                background-color: var(--toolbox-samples-section-bg-color);
+            }
+
+            p {
+                text-align: center;
+            }
+
+            div#samplesContainer {
+                max-width: 300px;
+                margin: 25px auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 35px;
+                align-items: center;
+                justify-items: center;
+
+                @media screen and (min-width: 900px) {
+                    max-width: 200px;
+                }
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 45px;
+                    width: 45px;
+                    background-color: var(--toolbox-samples-icon-box-bg-color);
+                    border-radius: 5px;
+                    transition: background-color 750ms;
+
+                    &:hover {
+                        background-color: var(--toolbox-samples-icon-box-bg-color-on-hover);
+                    }
+
+                    &:hover svg {
+                        transform: scale(110%);
+                    }
+
+                    svg {
+                        height: 32px;
+                        width: 32px;
+                        transition: transform 750ms;
+                    }
+                }
+            }
+        }
+    }
+}

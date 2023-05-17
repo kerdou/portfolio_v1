@@ -1,0 +1,17 @@
+{
+    "name": "kerdou/portfolio",
+    "description": "My first portfolio",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kerdou\\Portfolio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kerdou",
+            "email": "gautier.le.hir@gmail.com"
+        }
+    ],
+    "require": {}
+}

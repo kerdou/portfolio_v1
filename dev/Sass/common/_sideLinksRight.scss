@@ -1,0 +1,35 @@
+aside#sideLinksRight {
+    display: none;
+
+    @media screen and (min-width: 1250px) {
+        display: block;
+        width: 40px;
+        position: fixed;
+        bottom: 0px;
+        left: auto;
+        z-index: 10;
+        color: var(--text-default-color);
+        transition: right 125ms linear;
+        // le right est calculé dans sideLinksManagement.ts
+
+        // barre verticale
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 50px;
+            margin-left: 43%; // pour que la barre verticale soit mieux alignée sur le texte
+            background-color: var(--text-default-color);
+        }
+
+        a {
+            margin: 0px auto;
+            padding: 10px;
+            font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: 0.1em;
+            writing-mode: vertical-rl;
+        }
+    }
+}

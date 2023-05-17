@@ -1,0 +1,59 @@
+<form id="contactForm" class="majorSection slideMeIn">
+    <h2 id="formTitle">Contact</h2>
+
+    <div id="contactFormContainer">
+        <label id="lastNameLabel" for="lastNameField">Nom</label>
+        <span id="lastNameContainer" class="formInputsContainers">
+            <input id="lastNameField" class="formField" type="text" minlength="3" maxlength="30">
+            <span class="errorMessage"></span>
+            <span class="warningSign"></span>
+            <span class="underline"></span>
+        </span>
+
+        <label id="firstNameLabel" for="firstNameField">Prénom</label>
+        <span id="firstNameContainer" class="formInputsContainers">
+            <input id="firstNameField" class="formField" type="text" minlength="3" maxlength="30">
+            <span class="errorMessage"></span>
+            <span class="warningSign"></span>
+            <span class="underline"></span>
+        </span>
+
+        <label id="compLabel" for="compField">Société</label>
+        <span id="compContainer" class="formInputsContainers">
+            <input id="compField" class="formField" type="text" minlength="3" maxlength="30">
+            <span class="errorMessage"></span>
+            <span class="warningSign"></span>
+            <span class="underline"></span>
+        </span>
+
+        <label id="telLabel" for="telField">Téléphone</label>
+        <span id="telContainer" class="formInputsContainers">
+            <input id="telField" class="formField" type="text" inputmode="tel" minlength="10" maxlength="17">
+            <span class="errorMessage"></span>
+            <span class="warningSign"></span>
+            <span class="underline"></span>
+        </span>
+
+        <label id="mailLabel" for="mailField">Mail</label>
+        <span id="mailContainer" class="formInputsContainers">
+            <input id="mailField" class="formField" type="text" inputmode="email" minlength="6" maxlength="30">
+            <span class="errorMessage"></span>
+            <span class="warningSign"></span>
+            <span class="underline"></span>
+        </span>
+
+        <label id="msgLabel" for="msgField">Message</label>
+        <span id="msgContainer" class="formTextAreaContainer">
+            <textarea id="msgField" class="formField"  minlength="30" maxlength="1500"></textarea>
+            <span class="errorMessage"></span>
+            <span class="warningSign"></span>
+        </span>
+
+        <input id="formSendBtn" class="formSendBtn" type="button" value="Envoyer">
+    </div>
+
+    <div id="successContainer" class="hiddenSuccess">
+        <h2>Merci pour votre message</h2>
+        <h2>Je vous recontacte au plus vite</h2>
+    </div>
+</form>

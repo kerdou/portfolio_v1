@@ -1,0 +1,26 @@
+footer#footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    font-size: small;
+    line-height: 1.8;
+
+    div#bottomLinks {
+        @media screen and (min-width: 1250px) {
+            display: none;
+        }
+
+        a {
+            display: inline-block;
+            height: 32px;
+            width: 32px;
+            margin: 0 20px;
+
+            svg {
+                height: 32px;
+                width: 32px;
+            }
+        }
+    }
+}

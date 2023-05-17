@@ -1,0 +1,76 @@
+
+// gestion des liens texte et de leur soulignage au hover
+a.textLinkEffect,
+span.textLinkEffect {
+    position: relative;
+    color: var(--link-default-color);
+    white-space: nowrap;
+}
+
+a.textLinkEffect:before,
+span.textLinkEffect:before {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 0;
+    bottom: 1px;
+    background-color: var(--link-default-color);
+    transition: width 750ms;
+}
+
+a.textLinkEffect:hover,
+span.textLinkEffect:hover {
+    cursor: pointer;
+    color: var(--link-hover-color);
+}
+
+a.textLinkEffect:hover:before,
+span.textLinkEffect:hover:before {
+    width: 100%;
+}
+
+
+
+// gestion du hover des icones de lien
+.iconLinkEffectSlide {
+    cursor: pointer;
+    transition: transform 500ms, color 750ms;
+
+    svg {
+        path {
+            transition: color 750ms;
+        }
+    }
+}
+
+.iconLinkEffectSlide:hover {
+    transform: translateY(-2px);
+    color: var(--link-hover-color);
+
+    svg {
+        path {
+            color: var(--link-hover-color);
+        }
+    }
+}
+
+
+.iconLinkEffectNoSlide {
+    cursor: pointer;
+    transition: color 750ms;
+
+    svg {
+        path {
+            transition: color 750ms;
+        }
+    }
+}
+
+.iconLinkEffectNoSlide:hover {
+    svg {
+        path {
+            color: var(--link-hover-color);
+        }
+    }
+}

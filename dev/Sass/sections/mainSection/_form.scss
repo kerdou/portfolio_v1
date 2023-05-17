@@ -1,0 +1,380 @@
+form#contactForm {
+    overflow: hidden;
+    margin-bottom: 40px;
+
+    h2#formTitle {
+        margin-bottom: 20px;
+    }
+
+    h2#formTitle.titleVanishing {
+        animation: titleVanishingAnim 500ms 750ms forwards;
+    }
+
+    @keyframes titleVanishingAnim {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    div#contactFormContainer {
+        @media screen and (max-width: 400px) {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        @media screen and (min-width: 400px) {
+            display: grid;
+        }
+
+        @media screen and (min-width: 400px) and (max-width: 475px) {
+            grid-template-columns: 100px auto;
+            grid-template-areas:
+                "lastNameLabel lastNameContainer"
+                "firstNameLabel firstNameContainer"
+                "compLabel compContainer"
+                "telLabel telContainer"
+                "mailLabel mailContainer"
+                "msgLabel msgContainer"
+                ". formSendBtn";
+
+            label {
+                padding-top: 9px;
+                color: var(--text-lighter-color);
+            }
+
+            span#msgContainer {
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (min-width: 475px) and (max-width: 750px) {
+            grid-template-columns: auto auto 75px 20px 75px auto auto;
+            grid-template-areas:
+                "lastNameLabel . . . firstNameLabel firstNameLabel ."
+                "lastNameContainer lastNameContainer lastNameContainer . firstNameContainer firstNameContainer firstNameContainer"
+                "compLabel compLabel . . . . ."
+                "compContainer compContainer compContainer . . . ."
+                "telLabel telLabel . . mailLabel mailLabel ."
+                "telContainer telContainer telContainer . mailContainer mailContainer mailContainer"
+                "msgLabel msgLabel . . . . ."
+                "msgContainer msgContainer msgContainer msgContainer msgContainer msgContainer msgContainer"
+                ". . formSendBtn formSendBtn formSendBtn . .";
+
+            label {
+                width: 100px;
+            }
+        }
+
+        @media screen and (min-width: 750px){
+            grid-template-columns: 350px 30px auto;
+            grid-template-areas:
+                "lastNameLabel . msgLabel"
+                "lastNameContainer . msgContainer"
+                "firstNameLabel . msgContainer"
+                "firstNameContainer . msgContainer"
+                "compLabel . msgContainer"
+                "compContainer . msgContainer"
+                "telLabel . msgContainer"
+                "telContainer . msgContainer"
+                "mailLabel . msgContainer"
+                "mailContainer . formSendBtn";
+
+                input#formSendBtn {
+                    margin-bottom: 15px;
+                }
+
+                span.formTextAreaContainer {
+                    resize: none;
+                }
+        }
+
+        span.formInputsContainers {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 15px;
+            height: 40px;
+
+            input[type="text"] {
+                position: relative;
+                height: 40px;
+                width: 100%;
+                padding-left: 10px;
+                border-radius: 0px;
+                border: none;
+                border-bottom: solid 1px var(--form-input-bottom-line-color);
+                outline-style: none;
+                background-color: var(--bg-color);
+            }
+
+            // Message d'erreur du champ
+            span.errorMessage {
+                opacity: 0;
+                position: absolute;
+                transition: opacity 500ms ease-in-out;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 5px;
+                background-color: var(--bg-color);
+                content: attr(data-validate);
+                color: var(--form-error-color);
+                padding: 4px;
+                padding-left: 10px;
+                padding-right: 25px;
+                border: 1px solid var(--form-error-color);
+                border-radius: 15px;
+                font-size: 11px;
+
+                @media screen and (min-width: 750px) {
+                    font-size: 12px;
+                }
+            }
+
+            span.errorMessageDisplayed {
+                opacity: 100;
+            }
+
+            // Point d'exclamation signalant un probleme dans le champ
+            span.warningSign {
+                content: url('../img/svg/warning-alt-svgrepo-com.svg');
+                display: none;
+                position: absolute;
+                height: 25px;
+                width: 25px;
+                top: 50%;
+                transform: translateY(-48%);
+                right: 4px;
+            }
+
+            span.warningSignDisplayed {
+                display: block;
+                cursor: pointer;
+            }
+
+            span.underline {
+                position: absolute;
+                display: block;
+                z-index: 5;
+                bottom: 0px;
+                width: 0%;
+                transition: width 300ms ease-in-out;
+                height: 2px;
+                background-color: var(--form-field-focus-color);
+            }
+
+            span.underlineWide {
+                width: 100%;
+            }
+        }
+
+        span.formTextAreaContainer {
+            display: inline-block;
+            position: relative;
+            margin: 15px 0;
+
+            textarea {
+                width: 100%;
+                border-radius: 15px;
+                padding: 10px;
+                border: 1px solid var(--form-input-bottom-line-color);
+                border-radius: 15px;
+                outline-style: none;
+                transition: border 500ms ease-in-out;
+                background-color: var(--bg-color);
+
+                // customisation de la scrollbar pour Firefox
+                scrollbar-width: none; // suffit à masquer la scrollbar tout en gardant son effet sur le contenu
+
+                // customisation de la scrollbar pour Chrome, Edge, and Safari
+                &::-webkit-scrollbar {
+                    width: 0;  // suffit à masquer la scrollbar tout en gardant son effet sur le contenu
+                }
+
+                @media screen and (max-width: 750px) {
+                    resize: vertical; // indique quel axe reste modifiable
+                    min-height: 200px;
+                    height: 350px;
+                    max-height: 500px;
+                }
+
+                @media screen and (min-width: 750px) {
+                    resize: none; // indique quel axe reste modifiable
+                    height: 273px; // pour que le textearea ait la bonne height même aprés un changement de media query
+                    max-height: 273px; // pour que le textearea ait la bonne height même aprés un changement de media query
+                }
+            }
+
+            textarea.focusedTextArea {
+                border: 1px solid var(--form-field-focus-color);
+            }
+
+            // Message d'erreur du champ
+            span.errorMessage {
+                opacity: 0;
+                position: absolute;
+                transition: opacity 500ms ease-in-out;
+                top: 20px;
+                transform: translateY(-50%);
+                right: 5px;
+                background-color: var(--bg-color);
+                color: var(--form-error-color);
+                padding: 4px;
+                padding-left: 10px;
+                padding-right: 25px;
+                border: 1px solid var(--form-error-color);
+                border-radius: 15px;
+                font-size: 11px;
+
+                @media screen and (min-width: 750px) {
+                    font-size: 12px;
+                }
+            }
+
+            span.errorMessageDisplayed {
+                opacity: 100;
+            }
+
+            // Point d'exclamation signalant un probleme dans le champ
+            span.warningSign {
+                content: url('../img/svg/warning-alt-svgrepo-com.svg');
+                display: none;
+                position: absolute;
+                height: 25px;
+                width: 25px;
+                top: 20px;
+                right: 4px;
+                transform: translateY(-48%);
+            }
+
+            span.warningSignDisplayed {
+                display: block;
+            }
+        }
+
+        input.formSendBtn {
+            border: none;
+            border-radius: 5px;
+            padding: 5px 20px;
+            color: var(--text-lightest-color);
+            font-weight: 500;
+            background-color: var(--button-bg-color);
+            transition: background-color 500ms ease-in-out;
+        }
+
+        input.greySendBtn {
+            background-color: var(--button-active-bg-color);
+        }
+
+        label#lastNameLabel {
+            grid-area: lastNameLabel;
+        }
+
+        span#lastNameContainer {
+            grid-area: lastNameContainer;
+        }
+
+        label#firstNameLabel {
+            grid-area: firstNameLabel;
+        }
+
+        span#firstNameContainer {
+            grid-area: firstNameContainer;
+        }
+
+        label#compLabel {
+            grid-area: compLabel;
+        }
+
+        span#compContainer {
+            grid-area: compContainer;
+        }
+
+        label#telLabel {
+            grid-area: telLabel;
+        }
+
+        span#telContainer {
+            grid-area: telContainer;
+        }
+
+        label#mailLabel {
+            grid-area: mailLabel;
+        }
+
+        span#mailContainer {
+            grid-area: mailContainer;
+        }
+
+        label#msgLabel {
+            grid-area: msgLabel;
+        }
+
+        span#msgContainer {
+            grid-area: msgContainer;
+        }
+
+        input#formSendBtn {
+            grid-area: formSendBtn;
+        }
+    }
+
+    div.formVanishing {
+        animation: formVanishes 1000ms ease-in-out forwards;
+    }
+
+    @keyframes formVanishes {
+        from {
+            opacity: 1;
+            max-height: 5000px;
+        }
+
+        75% {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 0;
+            max-height: 0;
+        }
+    }
+
+    div#successContainer {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    div.hiddenSuccess {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    div.successAppearing {
+        animation:  successHeight 500ms 750ms forwards,
+                    successOpacity 1500ms 1000ms ease-in-out forwards;
+    }
+
+    @keyframes successHeight {
+        from {
+            max-height: 0;
+        }
+
+        to {
+            max-height: 500px;
+        }
+    }
+
+    @keyframes successOpacity {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}

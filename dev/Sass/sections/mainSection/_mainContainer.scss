@@ -1,0 +1,17 @@
+main#mainContainer {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .sectionBumper {
+        height: 40px;
+    }
+
+    .majorSection {
+        margin-bottom: 40px;
+
+        & > h2 {
+            margin-top: 10px;
+            color: var(--text-lightest-color);
+        }
+    }
+}

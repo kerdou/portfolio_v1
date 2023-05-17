@@ -1,0 +1,41 @@
+aside#sideLinksLeft {
+    display: none;
+
+    @media screen and (min-width: 1250px) {
+        width: 28px;
+        position: fixed;
+        bottom: 0px;
+        right: auto;
+        z-index: 10;
+        color: var(--text-default-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+        transition: left 125ms linear;
+        // le left est calculé dans sideLinksManagement.ts
+
+        // barre verticale
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 92px;
+            margin: 0px auto;
+            background-color: var(--text-default-color);
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            text-decoration-skip-ink: auto;
+            position: relative;
+            padding: 10px;
+
+            svg {
+                display: block;
+            }
+        }
+    }
+}

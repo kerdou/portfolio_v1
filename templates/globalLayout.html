@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    {headContent}
+</head>
+
+<body>
+    <div id="globalContainer" class="">
+
+        <div id="topMenuSpacer" class=""></div>
+        <header id="topMenu" class="">{topMenuContent}</header>
+
+        <main id="mainContainer" class="">{mainContainerContent}</main>
+
+        <footer id="footer" class="revealMe">{footerContent}</footer>
+    </div> <!-- end of #body_container -->
+
+    <div id="sideMenu" class="">{sideMenuContent}</div>
+    <div id="sideMenuFiller" class=""></div>
+
+    <svg id="stackModalArrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px"
+        height="25px" viewBox="0 0 256 256" xml:space="preserve">
+        <path id="stackModalArrowOuterColor" fill="currentColor" d="M36.042,238.86c-10.096,0-19.358-5.513-24.172-14.387c-4.814-8.874-4.385-19.645,1.12-28.107l91.958-141.389
+            C110.04,47.146,118.658,42.47,128,42.47s17.96,4.676,23.053,12.507l91.958,141.39c5.505,8.461,5.934,19.231,1.119,28.106
+            c-4.814,8.874-14.076,14.387-24.172,14.387H36.042z" />
+        <path id="stackModalArrowInnerColor" fill="currentColor" d="M234.628,201.819L142.67,60.429c-3.229-4.964-8.748-7.959-14.67-7.959c-5.921,0-11.441,2.995-14.67,7.959
+            l-91.958,141.39c-3.5,5.38-3.773,12.244-0.712,17.886s8.964,9.155,15.382,9.155h183.917c6.418,0,12.321-3.514,15.382-9.155
+            S238.128,207.199,234.628,201.819z M68.299,193.86L128,102.067l59.7,91.793H68.299z" />
+    </svg>
+    <div id="stackModal">{stackModalContent}</div>
+
+    <dialog id="wwwAcaModal">{wwwAcaModalContent}</dialog>
+
+    <button id="scrollUpButton" title="Retour haut de page">{scrollUpButtonContent}</button>
+
+    <aside id="sideLinksLeft">{sideLinksLeftContent}</aside>
+    <aside id="sideLinksRight">{sideLinksRightContent}</aside>
+
+    {bodyBottomDeclarations}
+</body>
+
+</html>

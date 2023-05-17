@@ -1,0 +1,39 @@
+#scrollUpButton {
+    position: fixed;
+    height: 32px;
+    width: 32px;
+    bottom: 10px;
+    z-index: 15;
+    padding: 0;
+    border: none;
+    outline: none;
+    opacity: 0;
+    transition:
+        opacity 250ms ease-in-out,
+        bottom 250ms ease-in-out,
+        right 125ms linear;
+    border-radius: 50%;
+    color: var(--text-lightest-color);
+    background-color: var(--scroll-up-arrow-bg-color);
+    backdrop-filter: blur(5px);
+
+    svg {
+        path {
+            transition: color 750ms;
+        }
+    }
+
+    &:hover {
+        svg {
+            path {
+                color: var(--link-hover-color);
+            }
+        }
+    }
+
+    @media screen and (min-width: 750px) {
+        bottom: 32px;
+    }
+
+    // le right est calculé dans scrollUpButton.ts
+}

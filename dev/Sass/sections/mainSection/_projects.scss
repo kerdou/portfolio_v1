@@ -1,0 +1,247 @@
+section#projects {
+    padding-bottom: 10px;
+
+    div#projContainer {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 20px;
+
+        @media screen and (min-width: 750px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (min-width: 1024px) {
+            grid-template-areas:
+                "healthkerdProj healthkerdProj"
+                "portfolioProj portfolioProj"
+                "responsiveProj arcadeProj"
+                "formProj crmProj";
+
+            div#healthkerdProj {
+                grid-area: healthkerdProj;
+            }
+
+            div#portfolioProj {
+                grid-area: portfolioProj;
+            }
+
+            div#responsiveProj {
+                grid-area: responsiveProj;
+            }
+
+            div#arcadeProj {
+                grid-area: arcadeProj;
+            }
+
+            div#formProj {
+                grid-area: formProj;
+            }
+
+            div#crmProj {
+                grid-area: crmProj;
+            }
+        }
+
+        div.projCard {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: auto 30px 30px;
+            grid-template-areas:
+                "projType projGitLink projVisitLink"
+                "title title title"
+                "pBox pBox pBox";
+
+                div.projColorBG {
+                    position: absolute;
+                    z-index: 0;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--project-bg-color);
+                }
+
+                div.projBG {
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.07;
+                    background-repeat: no-repeat;
+                    background-position: 50% 0;
+                    background-size: cover;
+                }
+
+                div.projBGShield {
+                    position: absolute;
+                    z-index: 2;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                span.projType {
+                    z-index: 3;
+                    grid-area: projType;
+                    align-self: center;
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: 600;
+                }
+
+                span.projTypePerso {
+                    z-index: 3;
+                    color: var(--project-type-perso-text-color);
+                }
+
+                span.projTypeExo {
+                    z-index: 3;
+                    color: var(--project-type-exo-text-color);
+                }
+
+                a.projVisitLink {
+                    z-index: 3;
+                    grid-area: projVisitLink;
+                    justify-self: right;
+                }
+
+                a.projGitLink {
+                    z-index: 3;
+                    grid-area: projGitLink;
+                    justify-self: right;
+                }
+
+                h3 {
+                    z-index: 3;
+                    grid-area: title;
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                    color: var(--text-lighter-color);
+                }
+
+                p.pBox {
+                    z-index: 3;
+                    grid-area: pBox;
+                    margin: 0;
+                }
+        }
+
+
+        @media screen and (min-width: 1024px) {
+            div.persoProjRight {
+                text-align: right;
+                grid-template-columns: repeat(10, 1fr) 30px 30px;
+                grid-template-areas:
+                    ". . . . . . . projType projType projType projType projType"
+                    ". . . . . . . title title title title title"
+                    ". . . . pBox pBox pBox pBox pBox pBox pBox ."
+                    ". . . . . . . . . . projGitLink projVisitLink";
+
+                div.projBGShield {
+                    z-index: 0;
+                }
+
+                div.projColorBG {
+                    z-index: 1;
+                    width: 55%;
+                    border-radius: 5px;
+                    background-color: var(--project-desktop-image-bg-color);
+                }
+
+                div.projBG {
+                    z-index: 2;
+                    width: 55%;
+                    border-radius: 5px;
+                    opacity: 0.25;
+                    transition: opacity 1000ms;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.80;
+                    }
+                }
+
+                h3 {
+                    z-index: 3;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    font-size: 25px;
+                }
+
+                p.pBox {
+                    z-index: 3;
+                    background-color: var(--project-bg-color);
+                    border-radius: 5px;
+                    padding: 25px;
+                }
+
+                a.projVisitLink,
+                a.projGitLink {
+                    z-index: 3;
+                    margin-top: 15px;
+                }
+            }
+
+            div.persoProjLeft {
+                grid-template-columns: 30px 30px repeat(10, 1fr);
+                grid-template-areas:
+                    "projType projType projType projType projType . . . . . . ."
+                    "title title title title title . . . . . . ."
+                    ". pBox pBox pBox pBox pBox pBox pBox . . . ."
+                    "projGitLink projVisitLink . . . . . . . . . .";
+
+                div.projBGShield {
+                    z-index: 0;
+                }
+
+                div.projColorBG {
+                    z-index: 1;
+                    width: 55%;
+                    left: 45%;
+                    border-radius: 5px;
+                    background-color: var(--project-desktop-image-bg-color);
+                }
+
+                div.projBG {
+                    z-index: 2;
+                    width: 55%;
+                    left: 45%;
+                    border-radius: 5px;
+                    opacity: 0.25;
+                    transition: opacity 1000ms;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.80;
+                    }
+                }
+
+                h3 {
+                    z-index: 3;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    font-size: 25px;
+                }
+
+                p.pBox {
+                    z-index: 3;
+                    background-color: var(--project-bg-color);
+                    border-radius: 5px;
+                    padding: 25px;
+                }
+
+                a.projVisitLink,
+                a.projGitLink {
+                    z-index: 3;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}

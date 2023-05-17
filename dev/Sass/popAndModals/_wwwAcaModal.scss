@@ -1,0 +1,66 @@
+dialog#wwwAcaModal {
+    width: fit-content;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--3WAcaModal-bg-color);
+    backdrop-filter: blur(5px);
+
+    @media screen and (min-width: 500px) {
+        padding: 10px 35px;
+    }
+
+    div#wwwAcaModalContent {
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+
+        * {
+            color: var(--text-lighter-color);
+        }
+
+        h3 {
+            text-align: center;
+            color: var(--text-lightest-color);
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-top: 0;
+        }
+
+        a {
+            display: block;
+            margin: 0 auto 15px auto;
+            outline: none;
+
+            button {
+                cursor: pointer;
+                border: none;
+                background-color: var(--button-bg-color);
+                border-radius: 5px;
+                padding: 5px 10px;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                gap: 5px;
+
+                &:active {
+                    background-color: var(--button-active-bg-color);
+                }
+
+                span,
+                svg path {
+                    font-weight: 500;
+                    color: var(--text-lightest-color);
+                }
+
+                svg {
+                    transform: translateY(-1px);
+                }
+            }
+        }
+    }
+}

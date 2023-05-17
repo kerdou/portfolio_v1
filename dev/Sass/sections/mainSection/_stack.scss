@@ -1,0 +1,159 @@
+section#stack {
+    div#stackPodsContainer {
+        position: relative;
+        margin: 0 auto;
+
+        @media screen and (max-width: 600px) {
+            max-width: 450px;
+        }
+
+        @media screen and (min-width: 600px) {
+            max-width: 900px;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; // pour garantir que la barre colle avec le haut de la timeline
+            bottom: 0; // pour garantir que la barre colle avec le bas de la timeline
+            left: 17px; // pour avoir le barre à gauche
+            width: 6px;
+            border-radius: 3px; // pour arrondir les extrémités de la timeline
+            margin-left: -3px; // pour compenser les 6px de width et ainsi garder la barre au centre
+            background-color: var(--timeline-secondary-color);
+
+            @media screen and (min-width: 600px) {
+                left: 50%;
+            }
+        }
+
+        // Régles communes à tous les Containers gauches et droites
+        // les containers sont des blocks donc ils ont naturellement tendance à se placer l'un sous l'autre
+        div.stackPod {
+            position: relative; // comme ils seront déplacés et qu'ils contiennent des éléments absolute, on a besoin de les avoir en relative
+            background-color: inherit;
+            width: 100%;
+            margin: 10px 0;
+            padding-left: 48px;
+
+            @media screen and (min-width: 600px) {
+                width: 50%;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            /* The circles on the timeline */
+            &::before {
+                content: '';
+                position: absolute;
+                top: 15px; // ajusté au pixel près pour qu'il soit à la même hauteur que la flèche
+                width: 26px;
+                height: 26px;
+                border-radius: 50%; // comme le width et le height sont identiques, ça donne un rond
+                border: 4px solid var(--timeline-secondary-color);
+                background-color: var(--timeline-ternary-color);
+                z-index: 1; // pour que le rond soit par dessus la barre
+
+                @media screen and (max-width: 600px) {
+                    left: 0px;
+                }
+
+                @media screen and (min-width: 600px) {
+                    right: -17px;
+                }
+            }
+
+            div.stackPodContent {
+                position: relative;
+                background-color: var(--timeline-primary-color);
+                padding: 10px;
+                border-radius: 5px;
+                margin-bottom: 25px;
+
+                // the arrows pointing to the timeline bar
+                &::before {
+                    content: " ";
+                    position: absolute;
+                    top: 22px; // pour que la fléche soit à la même hauteur que le rond
+                    border: medium solid var(--timeline-primary-color);
+                    border-width: 10px 10px 10px 0px;
+                    border-color: transparent var(--timeline-primary-color) transparent transparent;
+
+                    @media screen and (max-width: 600px) {
+                        left: -10px;
+                    }
+                }
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                    color: var(--text-lighter-color);
+                }
+
+                div.stackPodContentFlex {
+                    display: flex;
+                    flex-flow: row wrap;
+                    gap: 8px;
+
+                    // icon boxes
+                    span {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 45px;
+                        width: 45px;
+                        cursor: pointer;
+                        background-color: var(--timeline-icon-box-bg-color);
+                        border-radius: 5px;
+                        transition: background-color 750ms;
+
+                        &:hover {
+                            background-color: var(--timeline-icon-box-bg-color-on-hover);
+                        }
+
+                        &:hover svg {
+                            transform: scale(110%);
+                        }
+
+                        svg {
+                            height: 32px;
+                            width: 32px;
+                            transition: transform 750ms;
+                        }
+                    }
+                }
+            }
+
+            div.leftPodContent {
+                // inversion de la position et du sens de la fléche en mode desktop
+                &::before {
+                    @media screen and (min-width: 600px) {
+                        right: -10px;
+                        border-width: 10px 0px 10px 10px;
+                        border-color: transparent transparent transparent var(--timeline-primary-color);
+                    }
+                }
+            }
+        }
+
+        div.rightStackpod {
+            @media screen and (min-width: 600px) {
+                left: 50%;
+
+                &::before {
+                    left: -17px;
+                }
+
+                div.rightPodContent {
+                    // ajustement de la positon de la fléche en mode desktop
+                    &::before {
+                        @media screen and (min-width: 600px) {
+                            left: -10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+section#bio {
+    div#bioSubContainer {
+        div#bioApproach {
+            p {
+                margin: 0;
+                color: var(--text-lighter-color);
+            }
+
+            ul {
+                margin: 10px 0;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        @media screen and (min-width: 950px) {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 4vw;
+
+            div#bioText {
+                flex: 1;
+                margin: 0;
+
+                p:first-of-type {
+                    margin-top: 0;
+                }
+            }
+
+            div#bioApproach {
+                flex: 1;
+                max-width: 450px;
+            }
+        }
+    }
+
+    div#bioEnd {
+        margin: 25px auto 0 auto;
+        max-width: 260px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        @media screen and (min-width: 950px) {
+            max-width: 400px;
+        }
+
+        p {
+            text-align: center;
+
+        }
+
+        a {
+            button {
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 20px;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                gap: 5px;
+                background-color: var(--button-bg-color);
+                transition: background-color 150ms linear;
+
+                &:active {
+                    background-color: var(--button-active-bg-color);
+                }
+
+                * {
+                    color: var(--text-lightest-color);
+                    font-weight: 500;
+                }
+
+                svg {
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}

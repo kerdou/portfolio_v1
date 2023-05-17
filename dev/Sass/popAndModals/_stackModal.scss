@@ -1,0 +1,59 @@
+svg#stackModalArrow {
+    display: none;
+    position: absolute;
+    z-index: 5;
+
+    path#stackModalArrowInnerColor {
+        color:var(--stackModal-arrow-inner-color);
+    }
+
+    path#stackModalArrowOuterColor {
+        color:var(--stackModal-bg-color);
+    }
+}
+
+
+div#stackModal {
+    display: none;
+    position: absolute;
+    z-index: 6;
+    min-height: 125px;
+    border-radius: 5px;
+    background-color: var(--stackModal-bg-color);
+
+    div#stackModalContent {
+        position: relative;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 250ms ;
+
+        &.stackModalTransition {
+            opacity: 1;
+        }
+
+        a#stackModalLink {
+            z-index: 7;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+            height: 24px;
+            width: 24px;
+        }
+
+        div#stackModalFlex {
+            display: flex;
+            flex-flow: column nowrap;
+
+            h3#stackModalTitle {
+                margin-top: 0;
+                margin-right: 25px;
+                color: var(--text-lighter-color);
+            }
+
+            p#stackModalDescr {
+                margin: 0;
+            }
+        }
+    }
+}

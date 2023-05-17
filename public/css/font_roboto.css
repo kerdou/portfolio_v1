@@ -1,0 +1,11 @@
+/* global font */
+@font-face {
+    font-family: 'roboto';
+    src: url("./../webfonts/Poppins-Regular.ttf");
+};
+
+/*
+Pas eu d'autre choix que de séparer le chargement des fonts
+dans plusieurs fichiers pour qu'elles se chargent toutes,
+les charger avant styles.css permet d'accélerer l'ensemble
+*/

@@ -1,0 +1,7 @@
+node_modules/
+public/DL/
+release/
+logs/
+src/Model/common/dbSettings.php
+src/Controller/msgSend/emailTgt.php
+vendor/

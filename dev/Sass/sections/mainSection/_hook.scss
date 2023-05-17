@@ -1,0 +1,372 @@
+section#hook {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    p {
+        margin: 4px 0;
+    }
+
+    div#nameBlock {
+        p:first-of-type {
+            color: var(--text-lighter-color);
+        }
+
+        div#myBigName {
+            color: var(--text-lightest-color);
+            font-weight: 900;
+            font-size: clamp(1.7rem, 6vw, 5rem);
+        }
+
+
+    }
+
+    figure#portrait {
+        align-self: center;
+        max-width: 250px;
+        margin: 40px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    div#iAmBlock {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        p {
+            color: var(--text-lighter-color);
+        }
+
+
+        div#iAmText {
+            color: var(--text-lightest-color);
+            font-weight: 900;
+            font-size: clamp(1.4rem, 6vw, 3.5rem);
+            font-family: "Source Code Pro", monospace; // impératif d'avoir un font monospace pour que tous les caractères aient la même largeur. Sans ça c'est mort.
+            position: relative; // impératif pour placer ::before et ::after en absolute
+            width: max-content; // Impératif pour que le H1 ait la taille de son contenu
+
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute; // dimensionné par rapport à son H1
+                top: 0; // pour qu'il prenne toute la place possible
+                right: 0; // pour qu'il prenne toute la place possible
+                bottom: 0; // pour qu'il prenne toute la place possible
+                left: 0; // pour qu'il prenne toute la place possible
+            }
+
+
+            ////////////////////////////////////////////////////////////////////
+            ///
+            /// Le calculateur pour les animations et les timings est dispo dans
+            /// Projets > Portfolio > Conception > V3 > Description des éléments
+            ///
+            ////////////////////////////////////////////////////////////////////
+
+
+            // sert de "calque" cachant complétement le texte et révélant les lettres les unes après les autres
+            // le curseur et le calque avancent en même temps, ce qui rend l'effet réaliste
+            &.iAmFullStack::before {
+                background-color: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
+                animation: iAmFullStackTypewriter 7700ms steps(21) 1s 2 alternate;
+            }
+
+            // "curseur" clignotant simulant le prompt
+            // le curseur et le calque avancent en même temps, ce qui rend l'effet réaliste
+            &.iAmFullStack::after {
+                width: 0.125em;
+                //background-color: black;
+                animation:
+                    iAmFullStackTypewriter 7700ms steps(21) 1s infinite alternate,
+                    blink 750ms steps(21) infinite;
+            }
+
+            &.iAmFullStackReset {
+                animation: iAmTextReset 900ms linear 14950ms;
+            }
+
+            @keyframes iAmFullStackTypewriter {
+                from {
+                    left: 0%;
+                }
+                19% {
+                    left: 0%;
+                }
+                74% {
+                    left: 100%;
+                }
+                to {
+                    left: 100%; // le côté gauche va se déplacer à 100% vers la droite
+                }
+            }
+
+
+
+
+            // calque
+            &.iAmRig::before {
+                background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
+                animation: iAmRigTypewriter 5300ms steps(9) 1s 2 alternate;
+            }
+
+            // curseur
+            &.iAmRig::after {
+                width: 0.125em;
+                //background: black;
+                animation:
+                    iAmRigTypewriter 5300ms steps(9) 1s infinite alternate,
+                    blink 750ms steps(9) infinite;
+            }
+
+            &.iAmRigReset {
+                animation: iAmTextReset 900ms linear 10150ms;
+            }
+
+            @keyframes iAmRigTypewriter {
+                from {
+                    left: 0%;
+                }
+                28% {
+                    left: 0%;
+                }
+                62% {
+                    left: 100%;
+                }
+                to {
+                    left: 100%; // le côté gauche va se déplacer à 100% vers la droite
+                }
+            }
+
+
+
+
+
+            // calque
+            &.iAmCur::before {
+                background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
+                animation: iAmCurTypewriter 4900ms steps(7) 1s 2 alternate;
+            }
+
+            // curseur
+            &.iAmCur::after {
+                width: 0.125em;
+                //background: black;
+                animation:
+                    iAmCurTypewriter 4900ms steps(7) 1s infinite alternate,
+                    blink 750ms steps(7) infinite;
+            }
+
+            &.iAmCurReset {
+                animation: iAmTextReset 900ms linear 9350ms;
+            }
+
+            @keyframes iAmCurTypewriter {
+                from {
+                    left: 0%;
+                }
+                30% {
+                    left: 0%;
+                }
+                59% {
+                    left: 100%;
+                }
+                to {
+                    left: 100%; // le côté gauche va se déplacer à 100% vers la droite
+                }
+            }
+
+
+            // calque
+            &.iAmInt::before {
+                background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
+                animation: iAmIntTypewriter 4900ms steps(7) 1s 2 alternate;
+            }
+
+            // curseur
+            &.iAmInt::after {
+                width: 0.125em;
+                //background: black;
+                animation:
+                    iAmIntTypewriter 4900ms steps(7) 1s infinite alternate,
+                    blink 750ms steps(7) infinite;
+            }
+
+            &.iAmIntReset {
+                animation: iAmTextReset 900ms linear 9350ms;
+            }
+
+            @keyframes iAmIntTypewriter {
+                from {
+                    left: 0%;
+                }
+                30% {
+                    left: 0%;
+                }
+                59% {
+                    left: 100%;
+                }
+                to {
+                    left: 100%; // le côté gauche va se déplacer à 100% vers la droite
+                }
+            }
+
+
+
+            // calque
+            &.iAmPedag::before {
+                background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
+                animation: iAmPedagTypewriter 5300ms steps(9) 1s 2 alternate;
+            }
+
+            // curseur
+            &.iAmPedag::after {
+                width: 0.125em;
+                //background: black;
+                animation:
+                    iAmPedagTypewriter 5300ms steps(9) 1s infinite alternate,
+                    blink 750ms steps(9) infinite;
+            }
+
+            &.iAmPedagReset {
+                animation: iAmTextReset 900ms linear 10150ms;
+            }
+
+            @keyframes iAmPedagTypewriter {
+                from {
+                    left: 0%;
+                }
+                28% {
+                    left: 0%;
+                }
+                62% {
+                    left: 100%;
+                }
+                to {
+                    left: 100%; // le côté gauche va se déplacer à 100% vers la droite
+                }
+            }
+
+
+
+
+            // calque
+            &.iAmMethod::before {
+                background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
+                animation: iAmMethodTypewriter 5500ms steps(10) 1s 2 alternate;
+            }
+
+            // curseur
+            &.iAmMethod::after {
+                width: 0.125em;
+                //background: black;
+                animation:
+                    iAmMethodTypewriter 5500ms steps(10) 1s infinite alternate,
+                    blink 750ms steps(10) infinite;
+            }
+
+            &.iAmMethodReset {
+                animation: iAmTextReset 900ms linear 10550ms;
+            }
+
+            @keyframes iAmMethodTypewriter {
+                from {
+                    left: 0%;
+                }
+                27% {
+                    left: 0%;
+                }
+                63% {
+                    left: 100%;
+                }
+                to {
+                    left: 100%; // le côté gauche va se déplacer à 100% vers la droite
+                }
+            }
+
+
+
+
+
+
+            // calque
+            &.iAmImpl::before {
+                background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
+                animation: iAmImplTypewriter 5100ms steps(8) 1s 2 alternate;
+            }
+
+            // curseur
+            &.iAmImpl::after {
+                width: 0.125em;
+                //background: black;
+                animation:
+                    iAmImplTypewriter 5100ms steps(8) 1s infinite alternate,
+                    blink 750ms steps(8) infinite;
+            }
+
+            &.iAmImplReset {
+                animation: iAmTextReset 900ms linear 9750ms;
+            }
+
+            @keyframes iAmImplTypewriter {
+                from {
+                    left: 0%;
+                }
+                29% {
+                    left: 0%;
+                }
+                61% {
+                    left: 100%;
+                }
+                to {
+                    left: 100%; // le côté gauche va se déplacer à 100% vers la droite
+                }
+            }
+
+
+
+
+
+
+            // disparition et réapparition de iAmText pendant son changement de texte
+            @keyframes iAmTextReset {
+                from {
+                    opacity: 1;
+                }
+                33% {
+                    opacity: 0;
+                }
+                66% {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+
+            // clignotement du curseur
+            @keyframes blink {
+                from {
+                    background-color: transparent;
+                }
+
+                49% {
+                    background-color: transparent;
+                }
+
+                50% {
+                    background-color: var(--text-lightest-color);
+                }
+
+                to {
+                    background-color: var(--text-lightest-color); // permet de voir le texte caché sous le ::after
+                }
+            }
+        }
+    }
+}
