@@ -2024,6 +2024,9 @@ form#contactForm div#contactFormContainer input.formSendBtn {
   -webkit-transition: background-color 500ms ease-in-out;
   transition: background-color 500ms ease-in-out;
 }
+form#contactForm div#contactFormContainer input.formSendBtn:hover {
+  cursor: pointer;
+}
 form#contactForm div#contactFormContainer input.greySendBtn {
   background-color: var(--button-active-bg-color);
 }

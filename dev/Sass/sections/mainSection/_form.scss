@@ -265,6 +265,10 @@ form#contactForm {
             transition: background-color 500ms ease-in-out;
         }
 
+        input.formSendBtn:hover {
+            cursor: pointer;
+        }
+
         input.greySendBtn {
             background-color: var(--button-active-bg-color);
         }

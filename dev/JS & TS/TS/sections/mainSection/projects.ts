@@ -10,7 +10,7 @@ export default function projectsManagement() {
 
         switch(elementID) {
             case 'healthkerdProj':
-                path = './img/jpg/healthkerd.jpg';
+                path = './img/webP/healthkerd.webp';
                 bgDiv.addEventListener(
                     'click',
                     () => {
@@ -20,7 +20,7 @@ export default function projectsManagement() {
                 break;
 
             case 'portfolioProj':
-                path = './img/jpg/portfolio.jpg';
+                path = './img/webP/portfolio.webp';
                 bgDiv.addEventListener(
                     'click',
                     () => {
@@ -30,19 +30,19 @@ export default function projectsManagement() {
                 break;
 
             case 'responsiveProj':
-                path = './img/png/responsive.png';
+                path = './img/webP/responsive.webp';
                 break;
 
             case 'arcadeProj':
-                path = './img/png/anim.png';
+                path = './img/webP/anim.webp';
                 break;
 
             case 'formProj':
-                path = './img/png/form.png';
+                path = './img/webP/form.webp';
                 break;
 
             case 'crmProj':
-                path = './img/png/MVC.png';
+                path = './img/webP/MVC.webp';
                 break;
         }
 

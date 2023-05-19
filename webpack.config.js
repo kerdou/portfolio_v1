@@ -7,8 +7,12 @@ module.exports = [
         watch: true,
         watchOptions: {
             ignored: [
+                './.git',
+                './.vscode',
+                './assets',
                 './dev',
                 './node_modules/',
+                './release',
                 './src/',
                 './templates',
                 './tests',
