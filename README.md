@@ -46,13 +46,43 @@ Here is a list of things you should know before getting any further.
 - TS files can be found at **```dev/JS & TS/TS```**
 - Sass files are located at **```dev/JS & TS/Sass```**
 
-### Projects and exercices
+### Global
 
-- Every project will have the same shape on narrow devices
-- The personal projects shape will change drastically on wide screens
+- The sections fade in thanks to the Intersection Observer API
+
+### Top menu
+
+- The top menu will appear or vanish depending on the scrolling direction
+
+### Top section
+
+- A part of the text uses the TypeWriter effect which randomly swaps content with is a combination of JS and CSS
+
+### Bio
+
+- The “Concepteur développeur d’applications” modal relies on a combination of a dialog tag and its JS associated functions
+
+### Technos & environnement
+
+- First use of a timeline display
+- The screen will scroll to a vertical position guaranteeing the user will be able to see the modal properly, even on mobile devices, while preventing the icon from being hidden underneath the top menu if the viewport scrolls up
+- The modal will automatically vanish if the user resizes the browser or if the section scrolls out of the viewport thanks to the Intersection Observer API
+
+### Projets personnels & exercices
+
+- The cards are dispatched using CSS Flex in mobile mode while using CSS Grid on wider displays
+- The CSS Grid changes the dispatch of personnel project cards depending on the viewport width
+- The personal projects cards content’s CSS Grid position and Z-Index change along the viewport width
+
+### Contact form
+
+- The cards are dispatched using CSS Flex in mobile mode while using CSS Grid on wider displays
+- The CSS Grid changes the dispatch of personnel project cards depending on the viewport width
+Homemade management of field focus and error message display
+- Every date, HTML element and validation status are gathered in a single JS object which simplifies their management
+- Once the “Envoyer” button is clicked and the field are validated through regex, the data travel back and forth between frontend and backend  through the JS Fetch API
 
 ## 🎈 Usage <a name = "usage"></a>
-
 Send me a message through the form, that would be nice :wink:
 
 ## ⛏️ Built Using <a name = "built_using"></a>
@@ -64,7 +94,6 @@ Send me a message through the form, that would be nice :wink:
 - [PHP](https://www.php.net/) - Backend language
 - [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer/wiki) - PHP, JavaScript and CSS linter
 - [MySQL](https://www.mysql.com/) - Database
-
 
 ## ✍️ Author <a name = "author"></a>
 
