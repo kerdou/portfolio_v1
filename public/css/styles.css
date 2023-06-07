@@ -1822,6 +1822,9 @@ form#contactForm h2#formTitle.titleVanishing {
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
   }
+  form#contactForm div#contactFormContainer input#formSendBtn {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 400px) {
   form#contactForm div#contactFormContainer {
@@ -1831,7 +1834,7 @@ form#contactForm h2#formTitle.titleVanishing {
 @media screen and (min-width: 400px) and (max-width: 475px) {
   form#contactForm div#contactFormContainer {
     grid-template-columns: 100px auto;
-    grid-template-areas: "lastNameLabel lastNameContainer" "firstNameLabel firstNameContainer" "compLabel compContainer" "telLabel telContainer" "mailLabel mailContainer" "msgLabel msgContainer" ". formSendBtn";
+    grid-template-areas: "lastNameLabel lastNameContainer" "firstNameLabel firstNameContainer" "compLabel compContainer" "telLabel telContainer" "mailLabel mailContainer" "msgLabel msgContainer" ". btnContainer";
   }
   form#contactForm div#contactFormContainer label {
     padding-top: 9px;
@@ -1840,26 +1843,47 @@ form#contactForm h2#formTitle.titleVanishing {
   form#contactForm div#contactFormContainer span#msgContainer {
     margin-top: 0;
   }
+  form#contactForm div#contactFormContainer input#formSendBtn {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 475px) and (max-width: 750px) {
   form#contactForm div#contactFormContainer {
-    grid-template-columns: auto auto 75px 20px 75px auto auto;
-    grid-template-areas: "lastNameLabel . . . firstNameLabel firstNameLabel ." "lastNameContainer lastNameContainer lastNameContainer . firstNameContainer firstNameContainer firstNameContainer" "compLabel compLabel . . . . ." "compContainer compContainer compContainer . . . ." "telLabel telLabel . . mailLabel mailLabel ." "telContainer telContainer telContainer . mailContainer mailContainer mailContainer" "msgLabel msgLabel . . . . ." "msgContainer msgContainer msgContainer msgContainer msgContainer msgContainer msgContainer" ". . formSendBtn formSendBtn formSendBtn . .";
+    grid-template-columns: auto auto 20px auto auto;
+    grid-template-areas: "lastNameLabel lastNameLabel . firstNameLabel firstNameLabel" "lastNameContainer lastNameContainer . firstNameContainer firstNameContainer" "compLabel compLabel . . ." "compContainer compContainer . . ." "telLabel telLabel . mailLabel mailLabel" "telContainer telContainer . mailContainer mailContainer" "msgLabel msgLabel . . . " "msgContainer msgContainer msgContainer msgContainer msgContainer" "btnContainer btnContainer btnContainer btnContainer btnContainer";
   }
   form#contactForm div#contactFormContainer label {
     width: 100px;
+  }
+  form#contactForm div#contactFormContainer div#btnContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  form#contactForm div#contactFormContainer div#btnContainer input#formSendBtn {
+    width: 362px;
   }
 }
 @media screen and (min-width: 750px) {
   form#contactForm div#contactFormContainer {
     grid-template-columns: 350px 30px auto;
-    grid-template-areas: "lastNameLabel . msgLabel" "lastNameContainer . msgContainer" "firstNameLabel . msgContainer" "firstNameContainer . msgContainer" "compLabel . msgContainer" "compContainer . msgContainer" "telLabel . msgContainer" "telContainer . msgContainer" "mailLabel . msgContainer" "mailContainer . formSendBtn";
+    grid-template-areas: "lastNameLabel . msgLabel" "lastNameContainer . msgContainer" "firstNameLabel . msgContainer" "firstNameContainer . msgContainer" "compLabel . msgContainer" "compContainer . msgContainer" "telLabel . msgContainer" "telContainer . msgContainer" "mailLabel . msgContainer" "mailContainer . btnContainer";
   }
   form#contactForm div#contactFormContainer input#formSendBtn {
     margin-bottom: 15px;
   }
   form#contactForm div#contactFormContainer span.formTextAreaContainer {
     resize: none;
+  }
+  form#contactForm div#contactFormContainer input#formSendBtn {
+    width: 100%;
   }
 }
 form#contactForm div#contactFormContainer span.formInputsContainers {
@@ -2066,8 +2090,8 @@ form#contactForm div#contactFormContainer label#msgLabel {
 form#contactForm div#contactFormContainer span#msgContainer {
   grid-area: msgContainer;
 }
-form#contactForm div#contactFormContainer input#formSendBtn {
-  grid-area: formSendBtn;
+form#contactForm div#contactFormContainer div#btnContainer {
+  grid-area: btnContainer;
 }
 form#contactForm div.formVanishing {
   -webkit-animation: formVanishes 1000ms ease-in-out forwards;

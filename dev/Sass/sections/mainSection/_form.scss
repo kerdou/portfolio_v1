@@ -24,6 +24,10 @@ form#contactForm {
         @media screen and (max-width: 400px) {
             display: flex;
             flex-flow: column nowrap;
+
+            input#formSendBtn {
+                width: 100%;
+            }
         }
 
         @media screen and (min-width: 400px) {
@@ -39,7 +43,7 @@ form#contactForm {
                 "telLabel telContainer"
                 "mailLabel mailContainer"
                 "msgLabel msgContainer"
-                ". formSendBtn";
+                ". btnContainer";
 
             label {
                 padding-top: 9px;
@@ -49,23 +53,38 @@ form#contactForm {
             span#msgContainer {
                 margin-top: 0;
             }
+
+            input#formSendBtn {
+                width: 100%;
+            }
         }
 
         @media screen and (min-width: 475px) and (max-width: 750px) {
-            grid-template-columns: auto auto 75px 20px 75px auto auto;
+            grid-template-columns: auto auto 20px auto auto;
             grid-template-areas:
-                "lastNameLabel . . . firstNameLabel firstNameLabel ."
-                "lastNameContainer lastNameContainer lastNameContainer . firstNameContainer firstNameContainer firstNameContainer"
-                "compLabel compLabel . . . . ."
-                "compContainer compContainer compContainer . . . ."
-                "telLabel telLabel . . mailLabel mailLabel ."
-                "telContainer telContainer telContainer . mailContainer mailContainer mailContainer"
-                "msgLabel msgLabel . . . . ."
-                "msgContainer msgContainer msgContainer msgContainer msgContainer msgContainer msgContainer"
-                ". . formSendBtn formSendBtn formSendBtn . .";
+                "lastNameLabel lastNameLabel . firstNameLabel firstNameLabel"
+                "lastNameContainer lastNameContainer . firstNameContainer firstNameContainer"
+                "compLabel compLabel . . ."
+                "compContainer compContainer . . ."
+                "telLabel telLabel . mailLabel mailLabel"
+                "telContainer telContainer . mailContainer mailContainer"
+                "msgLabel msgLabel . . . "
+                "msgContainer msgContainer msgContainer msgContainer msgContainer"
+                "btnContainer btnContainer btnContainer btnContainer btnContainer";
 
             label {
                 width: 100px;
+            }
+
+            div#btnContainer {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+
+                input#formSendBtn {
+                    //padding: 5px 100px;
+                    width: 362px;
+                }
             }
         }
 
@@ -81,7 +100,7 @@ form#contactForm {
                 "telLabel . msgContainer"
                 "telContainer . msgContainer"
                 "mailLabel . msgContainer"
-                "mailContainer . formSendBtn";
+                "mailContainer . btnContainer";
 
                 input#formSendBtn {
                     margin-bottom: 15px;
@@ -89,6 +108,10 @@ form#contactForm {
 
                 span.formTextAreaContainer {
                     resize: none;
+                }
+
+                input#formSendBtn {
+                    width: 100%;
                 }
         }
 
@@ -321,8 +344,8 @@ form#contactForm {
             grid-area: msgContainer;
         }
 
-        input#formSendBtn {
-            grid-area: formSendBtn;
+        div#btnContainer {
+            grid-area: btnContainer;
         }
     }
 
