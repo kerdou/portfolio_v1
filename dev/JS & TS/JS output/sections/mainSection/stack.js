@@ -296,7 +296,7 @@ export default function stackManagement() {
             var elementID = recursiveElementSearch(event_1.target);
             var isATechIcon = techIconsIds.includes(elementID);
             if (!isATechIcon) {
-                setTimeout(stackModalVanishing, 250);
+                setTimeout(stackModalVanishing, 50);
             }
         }
     }

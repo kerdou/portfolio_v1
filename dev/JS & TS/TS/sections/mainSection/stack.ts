@@ -341,7 +341,7 @@ export default function stackManagement() {
             const isATechIcon = techIconsIds.includes(elementID);
 
             if (!isATechIcon) {
-                setTimeout(stackModalVanishing, 250);
+                setTimeout(stackModalVanishing, 50);
             }
         }
     }
