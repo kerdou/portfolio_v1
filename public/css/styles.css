@@ -1802,6 +1802,8 @@ form#contactForm h2#formTitle.titleVanishing {
   }
   to {
     opacity: 0;
+    max-height: 0;
+    margin: 0;
   }
 }
 @keyframes titleVanishingAnim {
@@ -1810,6 +1812,8 @@ form#contactForm h2#formTitle.titleVanishing {
   }
   to {
     opacity: 0;
+    max-height: 0;
+    margin: 0;
   }
 }
 @media screen and (max-width: 400px) {
@@ -1822,7 +1826,10 @@ form#contactForm h2#formTitle.titleVanishing {
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
   }
-  form#contactForm div#contactFormContainer input#formSendBtn {
+  form#contactForm div#contactFormContainer div#btnContainer {
+    width: 100%;
+  }
+  form#contactForm div#contactFormContainer div#btnContainer input#formSendBtn {
     width: 100%;
   }
 }
@@ -2134,6 +2141,9 @@ form#contactForm div#successContainer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+form#contactForm div#successContainer h2 {
+  margin: 10px 0;
 }
 form#contactForm div.hiddenSuccess {
   max-height: 0;
