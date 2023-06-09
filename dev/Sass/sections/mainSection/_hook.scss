@@ -17,9 +17,8 @@ section#hook {
             font-weight: 900;
             font-size: clamp(1.7rem, 6vw, 5rem);
         }
-
-
     }
+
 
     figure#portrait {
         align-self: center;
@@ -30,6 +29,7 @@ section#hook {
             width: 100%;
         }
     }
+
 
     div#iAmBlock {
         display: flex;
@@ -366,6 +366,117 @@ section#hook {
                 to {
                     background-color: var(--text-lightest-color); // permet de voir le texte caché sous le ::after
                 }
+            }
+        }
+    }
+
+
+    div#makeItQuick {
+        margin-top: 40px;
+
+        @media screen and (min-width: 860px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+
+            grid-template-areas:
+                "quickHeader quickHeader"
+                "quickDescr badgesStore"
+                "quickFollowUp quickFollowUp";
+        }
+
+        h3#quickHeader {
+            grid-area: quickHeader;
+            color: var(--text-lighter-color);
+
+            @media screen and (min-width: 860px) {
+                text-align: center;
+            }
+        }
+
+        p#quickDescr {
+            grid-area: quickDescr;
+        }
+
+        div#badgesStore {
+            grid-area: badgesStore;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 5px;
+            padding: 18px 0;
+
+            @media screen and (min-width: 860px) {
+                padding: 0;
+            }
+
+            span.quickBadge {
+                display: flex;
+                align-items: center;
+                color: var(--text-lightest-color);
+                border-radius: 20px;
+                padding: 5px 10px;
+                font-weight: 500;
+                height: 24px;
+                font-size: 11px;
+                font-weight: bold;
+            }
+
+            .persoBadge {
+                background-color: var(--persoBadge-bg-color);
+            }
+
+            .frontBadge {
+                background-color: var(--frontBadge-bg-color);
+            }
+
+            .backBadge {
+                background-color: var(--backBadge-bg-color);
+            }
+
+            .envBadge {
+                background-color: var(--envBadge-bg-color);
+            }
+
+            .cvBadge {
+                display: inline-block;
+
+                button {
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 2px 10px;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    gap: 5px;
+                    background-color: var(--button-bg-color);
+                    transition: background-color 150ms linear;
+
+                    &:active {
+                        background-color: var(--button-active-bg-color);
+                    }
+
+                    * {
+                        color: var(--text-lightest-color);
+                        font-size: 11px;
+                        font-weight: bold;
+                        line-height: 16px;
+                        vertical-align: middle;
+                    }
+
+                    svg {
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+
+        p#quickFollowUp {
+            grid-area: quickFollowUp;
+
+            @media screen and (min-width: 860px) {
+                margin-top: 15px;
+                text-align: center;
             }
         }
     }

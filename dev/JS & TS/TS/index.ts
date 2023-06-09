@@ -3,7 +3,7 @@ import sideLinksManagement from './common/sideLinksManagement';
 import sideMenuManagement from './common/sideMenu';
 import majorSectionsSlideIn from './common/majorSectionsSlideIn';
 import topMenuManagement from './sections/header/topMenu';
-import bioManagement from './sections/mainSection/bio';
+import wwwAcademyModalManagement from './popAndModals/wwwAcademyModal';
 import hookManagement from './sections/mainSection/hook';
 import projectsManagement from './sections/mainSection/projects';
 import stackManagement from './sections/mainSection/stack';
@@ -15,9 +15,9 @@ sideLinksManagement();
 topMenuManagement();
 majorSectionsSlideIn();
 sideMenuManagement();
+wwwAcademyModalManagement();
 
 // sections
-bioManagement();
 hookManagement();
 projectsManagement();
 stackManagement();

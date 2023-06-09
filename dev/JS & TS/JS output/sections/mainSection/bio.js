@@ -18,9 +18,11 @@ import { throttle } from './../../services/functionTiming';
 export default function bioManagement() {
     var globalContainer = document.getElementById('globalContainer');
     var sideMenuFiller = document.getElementById('sideMenuFiller');
-    var wwwModalShowTrigger = document.getElementById('wwwModalShowTrigger');
+    var wwwModalShowTriggerHook = document.getElementById('wwwModalShowTriggerHook');
+    var wwwModalShowTriggerBio = document.getElementById('wwwModalShowTriggerBio');
+    wwwModalShowTriggerHook.addEventListener('click', modalAppears);
+    wwwModalShowTriggerBio.addEventListener('click', modalAppears);
     var wwwAcaModal = document.getElementById('wwwAcaModal');
-    wwwModalShowTrigger.addEventListener('click', modalAppears);
     // le scroll ou le resize du viewport fait disparaitre la modale
     window.addEventListener('scroll', throttle(modalVanishes));
     window.addEventListener('resize', throttle(modalVanishes));

@@ -325,6 +325,10 @@ template {
   --typewriterSpeed: 8000ms;
   --typewriterCharacters: 21;
   --typewriter-cursor-color: white;
+  --persoBadge-bg-color: rgba(111, 187, 165, 0.6);
+  --frontBadge-bg-color: rgba(90, 167, 212, 0.6);
+  --backBadge-bg-color: rgba(89, 126, 228, 0.6);
+  --envBadge-bg-color: rgba(165, 131, 226, 0.6);
   --3WAcaModal-bg-color: rgba(70, 65, 110, 0.25);
   --timeline-primary-color: rgba(40, 55, 100, 0.4);
   --timeline-secondary-color: aquamarine;
@@ -1233,6 +1237,119 @@ section#hook div#iAmBlock div#iAmText.iAmImplReset {
   }
   to {
     background-color: var(--text-lightest-color);
+  }
+}
+section#hook div#makeItQuick {
+  margin-top: 40px;
+}
+@media screen and (min-width: 860px) {
+  section#hook div#makeItQuick {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-template-areas: "quickHeader quickHeader" "quickDescr badgesStore" "quickFollowUp quickFollowUp";
+  }
+}
+section#hook div#makeItQuick h3#quickHeader {
+  grid-area: quickHeader;
+  color: var(--text-lighter-color);
+}
+@media screen and (min-width: 860px) {
+  section#hook div#makeItQuick h3#quickHeader {
+    text-align: center;
+  }
+}
+section#hook div#makeItQuick p#quickDescr {
+  grid-area: quickDescr;
+}
+section#hook div#makeItQuick div#badgesStore {
+  grid-area: badgesStore;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  gap: 5px;
+  padding: 18px 0;
+}
+@media screen and (min-width: 860px) {
+  section#hook div#makeItQuick div#badgesStore {
+    padding: 0;
+  }
+}
+section#hook div#makeItQuick div#badgesStore span.quickBadge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--text-lightest-color);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-weight: 500;
+  height: 24px;
+  font-size: 11px;
+  font-weight: bold;
+}
+section#hook div#makeItQuick div#badgesStore .persoBadge {
+  background-color: var(--persoBadge-bg-color);
+}
+section#hook div#makeItQuick div#badgesStore .frontBadge {
+  background-color: var(--frontBadge-bg-color);
+}
+section#hook div#makeItQuick div#badgesStore .backBadge {
+  background-color: var(--backBadge-bg-color);
+}
+section#hook div#makeItQuick div#badgesStore .envBadge {
+  background-color: var(--envBadge-bg-color);
+}
+section#hook div#makeItQuick div#badgesStore .cvBadge {
+  display: inline-block;
+}
+section#hook div#makeItQuick div#badgesStore .cvBadge button {
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  padding: 2px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  background-color: var(--button-bg-color);
+  -webkit-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+}
+section#hook div#makeItQuick div#badgesStore .cvBadge button:active {
+  background-color: var(--button-active-bg-color);
+}
+section#hook div#makeItQuick div#badgesStore .cvBadge button * {
+  color: var(--text-lightest-color);
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 16px;
+  vertical-align: middle;
+}
+section#hook div#makeItQuick div#badgesStore .cvBadge button svg {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+section#hook div#makeItQuick p#quickFollowUp {
+  grid-area: quickFollowUp;
+}
+@media screen and (min-width: 860px) {
+  section#hook div#makeItQuick p#quickFollowUp {
+    margin-top: 15px;
+    text-align: center;
   }
 }
 

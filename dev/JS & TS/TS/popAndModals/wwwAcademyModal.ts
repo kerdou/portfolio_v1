@@ -1,12 +1,15 @@
-import { throttle } from './../../services/functionTiming';
+import { throttle } from "../services/functionTiming";
 
-export default function bioManagement() {
+export default function wwwAcademyModalManagement() {
     const globalContainer = document.getElementById('globalContainer') as HTMLDivElement;
     const sideMenuFiller = document.getElementById('sideMenuFiller') as HTMLDivElement;
 
-    const wwwModalShowTrigger = document.getElementById('wwwModalShowTrigger') as HTMLSpanElement;
+    const wwwModalShowTriggerHook = document.getElementById('wwwModalShowTriggerHook') as HTMLSpanElement;
+    const wwwModalShowTriggerBio = document.getElementById('wwwModalShowTriggerBio') as HTMLSpanElement;
+    wwwModalShowTriggerHook.addEventListener('click', modalAppears);
+    wwwModalShowTriggerBio.addEventListener('click', modalAppears);
     const wwwAcaModal = document.getElementById('wwwAcaModal') as HTMLDialogElement;
-    wwwModalShowTrigger.addEventListener('click', modalAppears);
+
 
     // le scroll ou le resize du viewport fait disparaitre la modale
     window.addEventListener('scroll', throttle(modalVanishes));
@@ -17,6 +20,7 @@ export default function bioManagement() {
     Object.entries(closersWithinModal).forEach(([key, element]) => {
         element.addEventListener('click', modalVanishes);
     });
+
 
     // un clic en dehors de la modale la fait disparaitre
     wwwAcaModal.addEventListener('click',
