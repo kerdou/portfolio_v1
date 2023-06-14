@@ -329,6 +329,7 @@ template {
   --frontBadge-bg-color: rgba(90, 167, 212, 0.6);
   --backBadge-bg-color: rgba(89, 126, 228, 0.6);
   --envBadge-bg-color: rgba(165, 131, 226, 0.6);
+  --miscBadge-bg-color: rgba(226, 131, 194, 0.6);
   --3WAcaModal-bg-color: rgba(70, 65, 110, 0.25);
   --timeline-primary-color: rgba(40, 55, 100, 0.4);
   --timeline-secondary-color: aquamarine;
@@ -891,26 +892,26 @@ section#hook div#iAmBlock div#iAmText::before, section#hook div#iAmBlock div#iAm
 }
 section#hook div#iAmBlock div#iAmText.iAmFullStack::before {
   background-color: var(--bg-color);
-  -webkit-animation: iAmFullStackTypewriter 7700ms steps(21) 1s 2 alternate;
-          animation: iAmFullStackTypewriter 7700ms steps(21) 1s 2 alternate;
+  -webkit-animation: iAmFullStackTypewriter 6450ms steps(21) 1s 2 alternate;
+          animation: iAmFullStackTypewriter 6450ms steps(21) 1s 2 alternate;
 }
 section#hook div#iAmBlock div#iAmText.iAmFullStack::after {
   width: 0.125em;
-  -webkit-animation: iAmFullStackTypewriter 7700ms steps(21) 1s infinite alternate, blink 750ms steps(21) infinite;
-          animation: iAmFullStackTypewriter 7700ms steps(21) 1s infinite alternate, blink 750ms steps(21) infinite;
+  -webkit-animation: iAmFullStackTypewriter 6450ms steps(21) 1s infinite alternate, blink 750ms steps(21) infinite;
+          animation: iAmFullStackTypewriter 6450ms steps(21) 1s infinite alternate, blink 750ms steps(21) infinite;
 }
 section#hook div#iAmBlock div#iAmText.iAmFullStackReset {
-  -webkit-animation: iAmTextReset 900ms linear 14950ms;
-          animation: iAmTextReset 900ms linear 14950ms;
+  -webkit-animation: iAmTextReset 500ms linear 12650ms;
+          animation: iAmTextReset 500ms linear 12650ms;
 }
 @-webkit-keyframes iAmFullStackTypewriter {
   from {
     left: 0%;
   }
-  19% {
+  12% {
     left: 0%;
   }
-  74% {
+  77% {
     left: 100%;
   }
   to {
@@ -921,10 +922,10 @@ section#hook div#iAmBlock div#iAmText.iAmFullStackReset {
   from {
     left: 0%;
   }
-  19% {
+  12% {
     left: 0%;
   }
-  74% {
+  77% {
     left: 100%;
   }
   to {
@@ -933,26 +934,26 @@ section#hook div#iAmBlock div#iAmText.iAmFullStackReset {
 }
 section#hook div#iAmBlock div#iAmText.iAmRig::before {
   background: var(--bg-color);
-  -webkit-animation: iAmRigTypewriter 5300ms steps(9) 1s 2 alternate;
-          animation: iAmRigTypewriter 5300ms steps(9) 1s 2 alternate;
+  -webkit-animation: iAmRigTypewriter 4050ms steps(9) 1s 2 alternate;
+          animation: iAmRigTypewriter 4050ms steps(9) 1s 2 alternate;
 }
 section#hook div#iAmBlock div#iAmText.iAmRig::after {
   width: 0.125em;
-  -webkit-animation: iAmRigTypewriter 5300ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
-          animation: iAmRigTypewriter 5300ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
+  -webkit-animation: iAmRigTypewriter 4050ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
+          animation: iAmRigTypewriter 4050ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
 }
 section#hook div#iAmBlock div#iAmText.iAmRigReset {
-  -webkit-animation: iAmTextReset 900ms linear 10150ms;
-          animation: iAmTextReset 900ms linear 10150ms;
+  -webkit-animation: iAmTextReset 500ms linear 7850ms;
+          animation: iAmTextReset 500ms linear 7850ms;
 }
 @-webkit-keyframes iAmRigTypewriter {
   from {
     left: 0%;
   }
-  28% {
+  18% {
     left: 0%;
   }
-  62% {
+  63% {
     left: 100%;
   }
   to {
@@ -963,10 +964,10 @@ section#hook div#iAmBlock div#iAmText.iAmRigReset {
   from {
     left: 0%;
   }
-  28% {
+  18% {
     left: 0%;
   }
-  62% {
+  63% {
     left: 100%;
   }
   to {
@@ -975,23 +976,23 @@ section#hook div#iAmBlock div#iAmText.iAmRigReset {
 }
 section#hook div#iAmBlock div#iAmText.iAmCur::before {
   background: var(--bg-color);
-  -webkit-animation: iAmCurTypewriter 4900ms steps(7) 1s 2 alternate;
-          animation: iAmCurTypewriter 4900ms steps(7) 1s 2 alternate;
+  -webkit-animation: iAmCurTypewriter 3650ms steps(7) 1s 2 alternate;
+          animation: iAmCurTypewriter 3650ms steps(7) 1s 2 alternate;
 }
 section#hook div#iAmBlock div#iAmText.iAmCur::after {
   width: 0.125em;
-  -webkit-animation: iAmCurTypewriter 4900ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
-          animation: iAmCurTypewriter 4900ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
+  -webkit-animation: iAmCurTypewriter 3650ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
+          animation: iAmCurTypewriter 3650ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
 }
 section#hook div#iAmBlock div#iAmText.iAmCurReset {
-  -webkit-animation: iAmTextReset 900ms linear 9350ms;
-          animation: iAmTextReset 900ms linear 9350ms;
+  -webkit-animation: iAmTextReset 500ms linear 7050ms;
+          animation: iAmTextReset 500ms linear 7050ms;
 }
 @-webkit-keyframes iAmCurTypewriter {
   from {
     left: 0%;
   }
-  30% {
+  22% {
     left: 0%;
   }
   59% {
@@ -1005,7 +1006,7 @@ section#hook div#iAmBlock div#iAmText.iAmCurReset {
   from {
     left: 0%;
   }
-  30% {
+  22% {
     left: 0%;
   }
   59% {
@@ -1017,23 +1018,23 @@ section#hook div#iAmBlock div#iAmText.iAmCurReset {
 }
 section#hook div#iAmBlock div#iAmText.iAmInt::before {
   background: var(--bg-color);
-  -webkit-animation: iAmIntTypewriter 4900ms steps(7) 1s 2 alternate;
-          animation: iAmIntTypewriter 4900ms steps(7) 1s 2 alternate;
+  -webkit-animation: iAmIntTypewriter 3650ms steps(7) 1s 2 alternate;
+          animation: iAmIntTypewriter 3650ms steps(7) 1s 2 alternate;
 }
 section#hook div#iAmBlock div#iAmText.iAmInt::after {
   width: 0.125em;
-  -webkit-animation: iAmIntTypewriter 4900ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
-          animation: iAmIntTypewriter 4900ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
+  -webkit-animation: iAmIntTypewriter 3650ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
+          animation: iAmIntTypewriter 3650ms steps(7) 1s infinite alternate, blink 750ms steps(7) infinite;
 }
 section#hook div#iAmBlock div#iAmText.iAmIntReset {
-  -webkit-animation: iAmTextReset 900ms linear 9350ms;
-          animation: iAmTextReset 900ms linear 9350ms;
+  -webkit-animation: iAmTextReset 500ms linear 7050ms;
+          animation: iAmTextReset 500ms linear 7050ms;
 }
 @-webkit-keyframes iAmIntTypewriter {
   from {
     left: 0%;
   }
-  30% {
+  22% {
     left: 0%;
   }
   59% {
@@ -1047,7 +1048,7 @@ section#hook div#iAmBlock div#iAmText.iAmIntReset {
   from {
     left: 0%;
   }
-  30% {
+  22% {
     left: 0%;
   }
   59% {
@@ -1059,26 +1060,26 @@ section#hook div#iAmBlock div#iAmText.iAmIntReset {
 }
 section#hook div#iAmBlock div#iAmText.iAmPedag::before {
   background: var(--bg-color);
-  -webkit-animation: iAmPedagTypewriter 5300ms steps(9) 1s 2 alternate;
-          animation: iAmPedagTypewriter 5300ms steps(9) 1s 2 alternate;
+  -webkit-animation: iAmPedagTypewriter 4050ms steps(9) 1s 2 alternate;
+          animation: iAmPedagTypewriter 4050ms steps(9) 1s 2 alternate;
 }
 section#hook div#iAmBlock div#iAmText.iAmPedag::after {
   width: 0.125em;
-  -webkit-animation: iAmPedagTypewriter 5300ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
-          animation: iAmPedagTypewriter 5300ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
+  -webkit-animation: iAmPedagTypewriter 4050ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
+          animation: iAmPedagTypewriter 4050ms steps(9) 1s infinite alternate, blink 750ms steps(9) infinite;
 }
 section#hook div#iAmBlock div#iAmText.iAmPedagReset {
-  -webkit-animation: iAmTextReset 900ms linear 10150ms;
-          animation: iAmTextReset 900ms linear 10150ms;
+  -webkit-animation: iAmTextReset 500ms linear 7850ms;
+          animation: iAmTextReset 500ms linear 7850ms;
 }
 @-webkit-keyframes iAmPedagTypewriter {
   from {
     left: 0%;
   }
-  28% {
+  18% {
     left: 0%;
   }
-  62% {
+  63% {
     left: 100%;
   }
   to {
@@ -1089,10 +1090,10 @@ section#hook div#iAmBlock div#iAmText.iAmPedagReset {
   from {
     left: 0%;
   }
-  28% {
+  18% {
     left: 0%;
   }
-  62% {
+  63% {
     left: 100%;
   }
   to {
@@ -1101,26 +1102,26 @@ section#hook div#iAmBlock div#iAmText.iAmPedagReset {
 }
 section#hook div#iAmBlock div#iAmText.iAmMethod::before {
   background: var(--bg-color);
-  -webkit-animation: iAmMethodTypewriter 5500ms steps(10) 1s 2 alternate;
-          animation: iAmMethodTypewriter 5500ms steps(10) 1s 2 alternate;
+  -webkit-animation: iAmMethodTypewriter 4250ms steps(10) 1s 2 alternate;
+          animation: iAmMethodTypewriter 4250ms steps(10) 1s 2 alternate;
 }
 section#hook div#iAmBlock div#iAmText.iAmMethod::after {
   width: 0.125em;
-  -webkit-animation: iAmMethodTypewriter 5500ms steps(10) 1s infinite alternate, blink 750ms steps(10) infinite;
-          animation: iAmMethodTypewriter 5500ms steps(10) 1s infinite alternate, blink 750ms steps(10) infinite;
+  -webkit-animation: iAmMethodTypewriter 4250ms steps(10) 1s infinite alternate, blink 750ms steps(10) infinite;
+          animation: iAmMethodTypewriter 4250ms steps(10) 1s infinite alternate, blink 750ms steps(10) infinite;
 }
 section#hook div#iAmBlock div#iAmText.iAmMethodReset {
-  -webkit-animation: iAmTextReset 900ms linear 10550ms;
-          animation: iAmTextReset 900ms linear 10550ms;
+  -webkit-animation: iAmTextReset 500ms linear 8250ms;
+          animation: iAmTextReset 500ms linear 8250ms;
 }
 @-webkit-keyframes iAmMethodTypewriter {
   from {
     left: 0%;
   }
-  27% {
+  18% {
     left: 0%;
   }
-  63% {
+  65% {
     left: 100%;
   }
   to {
@@ -1131,10 +1132,10 @@ section#hook div#iAmBlock div#iAmText.iAmMethodReset {
   from {
     left: 0%;
   }
-  27% {
+  18% {
     left: 0%;
   }
-  63% {
+  65% {
     left: 100%;
   }
   to {
@@ -1143,23 +1144,23 @@ section#hook div#iAmBlock div#iAmText.iAmMethodReset {
 }
 section#hook div#iAmBlock div#iAmText.iAmImpl::before {
   background: var(--bg-color);
-  -webkit-animation: iAmImplTypewriter 5100ms steps(8) 1s 2 alternate;
-          animation: iAmImplTypewriter 5100ms steps(8) 1s 2 alternate;
+  -webkit-animation: iAmImplTypewriter 3850ms steps(8) 1s 2 alternate;
+          animation: iAmImplTypewriter 3850ms steps(8) 1s 2 alternate;
 }
 section#hook div#iAmBlock div#iAmText.iAmImpl::after {
   width: 0.125em;
-  -webkit-animation: iAmImplTypewriter 5100ms steps(8) 1s infinite alternate, blink 750ms steps(8) infinite;
-          animation: iAmImplTypewriter 5100ms steps(8) 1s infinite alternate, blink 750ms steps(8) infinite;
+  -webkit-animation: iAmImplTypewriter 3850ms steps(8) 1s infinite alternate, blink 750ms steps(8) infinite;
+          animation: iAmImplTypewriter 3850ms steps(8) 1s infinite alternate, blink 750ms steps(8) infinite;
 }
 section#hook div#iAmBlock div#iAmText.iAmImplReset {
-  -webkit-animation: iAmTextReset 900ms linear 9750ms;
-          animation: iAmTextReset 900ms linear 9750ms;
+  -webkit-animation: iAmTextReset 500ms linear 7450ms;
+          animation: iAmTextReset 500ms linear 7450ms;
 }
 @-webkit-keyframes iAmImplTypewriter {
   from {
     left: 0%;
   }
-  29% {
+  19% {
     left: 0%;
   }
   61% {
@@ -1173,7 +1174,7 @@ section#hook div#iAmBlock div#iAmText.iAmImplReset {
   from {
     left: 0%;
   }
-  29% {
+  19% {
     left: 0%;
   }
   61% {
@@ -1247,7 +1248,7 @@ section#hook div#makeItQuick {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    grid-template-areas: "quickHeader quickHeader" "quickDescr badgesStore" "quickFollowUp quickFollowUp";
+    grid-template-areas: "quickHeader quickHeader" "quickDescr badgesStore" "quickFollowUpWide quickFollowUpWide";
   }
 }
 section#hook div#makeItQuick h3#quickHeader {
@@ -1306,6 +1307,9 @@ section#hook div#makeItQuick div#badgesStore .backBadge {
 section#hook div#makeItQuick div#badgesStore .envBadge {
   background-color: var(--envBadge-bg-color);
 }
+section#hook div#makeItQuick div#badgesStore .miscBadge {
+  background-color: var(--miscBadge-bg-color);
+}
 section#hook div#makeItQuick div#badgesStore .cvBadge {
   display: inline-block;
 }
@@ -1343,13 +1347,22 @@ section#hook div#makeItQuick div#badgesStore .cvBadge button svg {
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
 }
-section#hook div#makeItQuick p#quickFollowUp {
-  grid-area: quickFollowUp;
+section#hook div#makeItQuick p#quickFollowUpNarrow {
+  margin-top: 10px;
 }
 @media screen and (min-width: 860px) {
-  section#hook div#makeItQuick p#quickFollowUp {
-    margin-top: 15px;
-    text-align: center;
+  section#hook div#makeItQuick p#quickFollowUpNarrow {
+    display: none;
+  }
+}
+section#hook div#makeItQuick p#quickFollowUpWide {
+  grid-area: quickFollowUpWide;
+  margin-top: 25px;
+  text-align: center;
+}
+@media screen and (max-width: 860px) {
+  section#hook div#makeItQuick p#quickFollowUpWide {
+    display: none;
   }
 }
 
