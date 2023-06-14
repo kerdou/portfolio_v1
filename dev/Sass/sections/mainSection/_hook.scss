@@ -73,31 +73,30 @@ section#hook {
             // le curseur et le calque avancent en même temps, ce qui rend l'effet réaliste
             &.iAmFullStack::before {
                 background-color: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
-                animation: iAmFullStackTypewriter 7700ms steps(21) 1s 2 alternate;
+                animation: iAmFullStackTypewriter 6450ms steps(21) 1s 2 alternate;
             }
 
             // "curseur" clignotant simulant le prompt
             // le curseur et le calque avancent en même temps, ce qui rend l'effet réaliste
             &.iAmFullStack::after {
                 width: 0.125em;
-                //background-color: black;
                 animation:
-                    iAmFullStackTypewriter 7700ms steps(21) 1s infinite alternate,
+                    iAmFullStackTypewriter 6450ms steps(21) 1s infinite alternate,
                     blink 750ms steps(21) infinite;
             }
 
             &.iAmFullStackReset {
-                animation: iAmTextReset 900ms linear 14950ms;
+                animation: iAmTextReset 500ms linear 12650ms;
             }
 
             @keyframes iAmFullStackTypewriter {
                 from {
                     left: 0%;
                 }
-                19% {
+                12% {
                     left: 0%;
                 }
-                74% {
+                77% {
                     left: 100%;
                 }
                 to {
@@ -111,30 +110,29 @@ section#hook {
             // calque
             &.iAmRig::before {
                 background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
-                animation: iAmRigTypewriter 5300ms steps(9) 1s 2 alternate;
+                animation: iAmRigTypewriter 4050ms steps(9) 1s 2 alternate;
             }
 
             // curseur
             &.iAmRig::after {
                 width: 0.125em;
-                //background: black;
                 animation:
-                    iAmRigTypewriter 5300ms steps(9) 1s infinite alternate,
+                    iAmRigTypewriter 4050ms steps(9) 1s infinite alternate,
                     blink 750ms steps(9) infinite;
             }
 
             &.iAmRigReset {
-                animation: iAmTextReset 900ms linear 10150ms;
+                animation: iAmTextReset 500ms linear 7850ms;
             }
 
             @keyframes iAmRigTypewriter {
                 from {
                     left: 0%;
                 }
-                28% {
+                18% {
                     left: 0%;
                 }
-                62% {
+                63% {
                     left: 100%;
                 }
                 to {
@@ -149,27 +147,26 @@ section#hook {
             // calque
             &.iAmCur::before {
                 background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
-                animation: iAmCurTypewriter 4900ms steps(7) 1s 2 alternate;
+                animation: iAmCurTypewriter 3650ms steps(7) 1s 2 alternate;
             }
 
             // curseur
             &.iAmCur::after {
                 width: 0.125em;
-                //background: black;
                 animation:
-                    iAmCurTypewriter 4900ms steps(7) 1s infinite alternate,
+                    iAmCurTypewriter 3650ms steps(7) 1s infinite alternate,
                     blink 750ms steps(7) infinite;
             }
 
             &.iAmCurReset {
-                animation: iAmTextReset 900ms linear 9350ms;
+                animation: iAmTextReset 500ms linear 7050ms;
             }
 
             @keyframes iAmCurTypewriter {
                 from {
                     left: 0%;
                 }
-                30% {
+                22% {
                     left: 0%;
                 }
                 59% {
@@ -181,30 +178,31 @@ section#hook {
             }
 
 
+
+
             // calque
             &.iAmInt::before {
                 background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
-                animation: iAmIntTypewriter 4900ms steps(7) 1s 2 alternate;
+                animation: iAmIntTypewriter 3650ms steps(7) 1s 2 alternate;
             }
 
             // curseur
             &.iAmInt::after {
                 width: 0.125em;
-                //background: black;
                 animation:
-                    iAmIntTypewriter 4900ms steps(7) 1s infinite alternate,
+                    iAmIntTypewriter 3650ms steps(7) 1s infinite alternate,
                     blink 750ms steps(7) infinite;
             }
 
             &.iAmIntReset {
-                animation: iAmTextReset 900ms linear 9350ms;
+                animation: iAmTextReset 500ms linear 7050ms;
             }
 
             @keyframes iAmIntTypewriter {
                 from {
                     left: 0%;
                 }
-                30% {
+                22% {
                     left: 0%;
                 }
                 59% {
@@ -220,30 +218,29 @@ section#hook {
             // calque
             &.iAmPedag::before {
                 background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
-                animation: iAmPedagTypewriter 5300ms steps(9) 1s 2 alternate;
+                animation: iAmPedagTypewriter 4050ms steps(9) 1s 2 alternate;
             }
 
             // curseur
             &.iAmPedag::after {
                 width: 0.125em;
-                //background: black;
                 animation:
-                    iAmPedagTypewriter 5300ms steps(9) 1s infinite alternate,
+                    iAmPedagTypewriter 4050ms steps(9) 1s infinite alternate,
                     blink 750ms steps(9) infinite;
             }
 
             &.iAmPedagReset {
-                animation: iAmTextReset 900ms linear 10150ms;
+                animation: iAmTextReset 500ms linear 7850ms;
             }
 
             @keyframes iAmPedagTypewriter {
                 from {
                     left: 0%;
                 }
-                28% {
+                18% {
                     left: 0%;
                 }
-                62% {
+                63% {
                     left: 100%;
                 }
                 to {
@@ -257,30 +254,29 @@ section#hook {
             // calque
             &.iAmMethod::before {
                 background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
-                animation: iAmMethodTypewriter 5500ms steps(10) 1s 2 alternate;
+                animation: iAmMethodTypewriter 4250ms steps(10) 1s 2 alternate;
             }
 
             // curseur
             &.iAmMethod::after {
                 width: 0.125em;
-                //background: black;
                 animation:
-                    iAmMethodTypewriter 5500ms steps(10) 1s infinite alternate,
+                    iAmMethodTypewriter 4250ms steps(10) 1s infinite alternate,
                     blink 750ms steps(10) infinite;
             }
 
             &.iAmMethodReset {
-                animation: iAmTextReset 900ms linear 10550ms;
+                animation: iAmTextReset 500ms linear 8250ms;
             }
 
             @keyframes iAmMethodTypewriter {
                 from {
                     left: 0%;
                 }
-                27% {
+                18% {
                     left: 0%;
                 }
-                63% {
+                65% {
                     left: 100%;
                 }
                 to {
@@ -296,27 +292,26 @@ section#hook {
             // calque
             &.iAmImpl::before {
                 background: var(--bg-color); // a la même couleur que le reste de la page pour cacher le texte
-                animation: iAmImplTypewriter 5100ms steps(8) 1s 2 alternate;
+                animation: iAmImplTypewriter 3850ms steps(8) 1s 2 alternate;
             }
 
             // curseur
             &.iAmImpl::after {
                 width: 0.125em;
-                //background: black;
                 animation:
-                    iAmImplTypewriter 5100ms steps(8) 1s infinite alternate,
+                    iAmImplTypewriter 3850ms steps(8) 1s infinite alternate,
                     blink 750ms steps(8) infinite;
             }
 
             &.iAmImplReset {
-                animation: iAmTextReset 900ms linear 9750ms;
+                animation: iAmTextReset 500ms linear 7450ms;
             }
 
             @keyframes iAmImplTypewriter {
                 from {
                     left: 0%;
                 }
-                29% {
+                19% {
                     left: 0%;
                 }
                 61% {
@@ -382,7 +377,7 @@ section#hook {
             grid-template-areas:
                 "quickHeader quickHeader"
                 "quickDescr badgesStore"
-                "quickFollowUp quickFollowUp";
+                "quickFollowUpWide quickFollowUpWide";
         }
 
         h3#quickHeader {
@@ -437,6 +432,10 @@ section#hook {
                 background-color: var(--envBadge-bg-color);
             }
 
+            .miscBadge {
+                background-color: var(--miscBadge-bg-color);
+            }
+
             .cvBadge {
                 display: inline-block;
 
@@ -471,12 +470,22 @@ section#hook {
             }
         }
 
-        p#quickFollowUp {
-            grid-area: quickFollowUp;
+        p#quickFollowUpNarrow {
+            margin-top: 10px;
 
             @media screen and (min-width: 860px) {
-                margin-top: 15px;
-                text-align: center;
+                display: none;
+            }
+        }
+
+
+        p#quickFollowUpWide {
+            grid-area: quickFollowUpWide;
+            margin-top: 25px;
+            text-align: center;
+
+            @media screen and (max-width: 860px) {
+                display: none;
             }
         }
     }
