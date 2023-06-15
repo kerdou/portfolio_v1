@@ -869,9 +869,6 @@ section#hook div#iAmBlock {
       -ms-flex-align: center;
           align-items: center;
 }
-section#hook div#iAmBlock p {
-  color: var(--text-lighter-color);
-}
 section#hook div#iAmBlock div#iAmText {
   color: var(--text-lightest-color);
   font-weight: 900;

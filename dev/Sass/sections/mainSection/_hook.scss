@@ -36,11 +36,6 @@ section#hook {
         flex-flow: column nowrap;
         align-items: center;
 
-        p {
-            color: var(--text-lighter-color);
-        }
-
-
         div#iAmText {
             color: var(--text-lightest-color);
             font-weight: 900;
