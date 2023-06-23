@@ -219,9 +219,8 @@ export default function formManagement() {
     }
 
 
-    /**
-     *
-     * @param evt
+    /** Le clic sur les messages d'erreurs du champ met le focus sur le champ lui-même
+     * @param {PointerEvent} evt Input de clic
      */
     function giveFocusToField(evt: Event) {
         const event = evt as PointerEvent;
@@ -295,7 +294,7 @@ export default function formManagement() {
 
             case 'mail':
                 testParams.min = 6;
-                testParams.max = 30;
+                testParams.max = 256;
                 break;
 
             case 'msg':
@@ -372,24 +371,58 @@ export default function formManagement() {
         }
     }
 
-    formObj.form.addEventListener('keydown', keyboardEnterPress);
+
+    document.addEventListener('keydown', keyboardEnterPress);
 
     /** Un appui sur Enter ou NumpadEnter équivaut à cliquer sur le bouton "Envoyer" dans le formulaire
+     * si tous les champs sont corrects et qu'aucun d'entre eux n'a le focus
      * @param { KeyboardEvent } evt Appui de touche à analyser
      */
     function keyboardEnterPress(evt: Event) {
         const event = evt as KeyboardEvent;
-        const checksOverall: {[key: string]: boolean} = {};
-        checksOverall.isEnter = event.code == 'Enter' ? true : false;
-        checksOverall.isNumEnter = event.code == 'NumpadEnter' ? true : false;
+        const enterKeyChecksOverall: {[key: string]: boolean} = {};
+        enterKeyChecksOverall.isEnter = event.code == 'Enter' ? true : false;
+        enterKeyChecksOverall.isNumEnter = event.code == 'NumpadEnter' ? true : false;
 
         // Vérifier si au moins un des cas de figure est acceptable
-        const isAcceptable = Object.values(checksOverall).some((value) => {
+        const isAnEnterKey = Object.values(enterKeyChecksOverall).some((value) => {
             return value == true;
         });
 
-        if (isAcceptable == true) {
+        const focusChecksOverall: {[key: string]: boolean} = {
+            lastName: false,
+            firstName: false,
+            comp: false,
+            tel: false,
+            mail: false,
+            msg: false
+        };
+
+        // récupére l'état du focus sur chacun des champs
+        Object.entries(formObj.inputs).forEach(([fieldKey, fieldValue]) => {
+            focusChecksOverall[fieldKey] = ((formObj.inputs[fieldKey].container as HTMLElement).id.replace('Container', '')  == (document.activeElement as HTMLElement).id.replace('Field', '')) ? true : false;
+        });
+
+        // si au moins un des champs à le focus, oneFieldHasFocus sera true
+        const oneFieldHasFocus = Object.values(focusChecksOverall).some((value) => {
+            return value == true;
+        });
+
+
+        // l'autofill des champs ne déclenche pas de check des champ et laisse formObj.globalStatus.fieldsValidity en 'untested'
+        // si formObj.globalStatus.fieldsValidity != 'valid' on lance une série de tests sur les champs
+        if (isAnEnterKey == true &&
+            oneFieldHasFocus == false &&
+            formObj.globalStatus.fieldsValidity == 'valid') {
             formSendBtnReaction();
+        } else {
+            globalStatusUpdater('enterKey');
+
+            if (isAnEnterKey == true &&
+                oneFieldHasFocus == false &&
+                formObj.globalStatus.fieldsValidity == 'valid') {
+                formSendBtnReaction();
+            }
         }
     }
 
@@ -440,6 +473,7 @@ export default function formManagement() {
 
         switch(origin) {
             case 'clickedButton':
+            case 'enterKey':
                 formObj.globalStatus.fieldsValidity = (formValidityCheck == true) ? 'valid' : 'failed';
                 break;
 

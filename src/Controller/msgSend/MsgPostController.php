@@ -101,7 +101,7 @@ class MsgPostController
             ],
             'mail' => [
                 'min' => 6,
-                'max' => 30
+                'max' => 256
             ],
             'msg' => [
                 'min' => 30,
